@@ -16,6 +16,7 @@ It's a schema of bank with digital transactions without physical cards, it's a s
 - state: A state of the country.
 
 - municipality: The mayor´s office or one part of the state.
+  
 
 
 ***2. Client.***
@@ -43,6 +44,7 @@ It's a schema of bank with digital transactions without physical cards, it's a s
 ***Client - Area*** relationship (postal_code):  A client lives in one Area, and in the area live so much clients. Many-to-one relationship.
 
 
+
 ***3. Branch.***
 
 - id: A number that identifies the branch.
@@ -58,6 +60,7 @@ It's a schema of bank with digital transactions without physical cards, it's a s
 - swift_code: Also known as a Bank Identifier Code (BIC), is a unique 8-11 character code used to identify banks and financial institutions globally, primarily for international money transfers. 
 
 ***Branch - Area*** relationship (postal_code): A branch is located in one area, and in the area there are many branches located. Many-to-one relationship.
+
 
 
 
@@ -97,6 +100,7 @@ It's a schema of bank with digital transactions without physical cards, it's a s
 
 
 
+
 ***5. Account type.***
 
 - type: types of accounts: SAVINGS, CHECK, INVESTMENT.
@@ -104,6 +108,7 @@ It's a schema of bank with digital transactions without physical cards, it's a s
 - annual_interest_rate: Percentage that you are paid per year or month.
 
 - maintenance_charges: How much they charge you each month to maintain the account.
+
 
 
 ***6. Account.***
@@ -126,6 +131,7 @@ It's a schema of bank with digital transactions without physical cards, it's a s
 
  
 
+
 ***7. Accounts_clients.*** Because that the account  and client tables have a many-to-many relationship a cross-reference table is created with their primary keys to match each client with his account.
 
 - curp: Client curp.
@@ -136,6 +142,7 @@ It's a schema of bank with digital transactions without physical cards, it's a s
 ***Accounts_clients - Accounts*** relationship (clabe): An account can belong to different clients. (e.g. a joint bank account)
 
 ***Composite primary key(curp, clabe)***. So, because of the 2 relationships, it's a many-to-many relationship, the primary key of client can appear in different records and the same with account.
+
 
 
 ***8. Transaction.***
@@ -159,6 +166,7 @@ It's a schema of bank with digital transactions without physical cards, it's a s
 ***Transaction - Account*** relationship (destination_clabe): One transaction is targeted to an only account, and one account can receive many transactions. Many-to-one relationship.
 
 
+
 ***9. Account interest.*** Every year or every month, depending on the bank, they look at how much money was in your account and calculate the interest you're owed. 
 
 - id: ID of the interest paid for each account.
@@ -178,6 +186,7 @@ It's a schema of bank with digital transactions without physical cards, it's a s
 ***Account interest - Transaction*** relationship (transaction_id): One account interest's payment is made by one transaction, and one transaction only belongs to one account interest´s payment. One-to-one realtionship.
 
 
+
 ***10. Loan type.***
 
 - type: 'PERSONAL', 'AUTO', 'MORTGAGE', 'STUDENT'.
@@ -185,6 +194,7 @@ It's a schema of bank with digital transactions without physical cards, it's a s
 - annual_interest_rate: The interest percentage to pay along with the loan.
 
 - advance_payment_charge: If you want to pay early, how much they charge you.
+
 
 
 ***11. Loan:***
@@ -220,6 +230,7 @@ It's a schema of bank with digital transactions without physical cards, it's a s
 
 
 
+
 ***12. Loan payment.*** Every time a customer pays his monthly fee of his loan, the bank records it here to determine whether they're current or not.
 
 - id: ID of the monthly payment 
@@ -235,6 +246,7 @@ It's a schema of bank with digital transactions without physical cards, it's a s
 ***Loan payment - Transaction*** relationship (transaction_id): A loan payment is made by one transaction, and one transaction can only belong to one loan payment. One-to-one realtionship.
 
 ***Loan payment - Loan*** relationship (loan_id): A monthly loan payment is made for a loan, and a loan can receive many monthly loan payments. Many-to-one relationship.
+
 
 
 
@@ -261,6 +273,7 @@ It's a schema of bank with digital transactions without physical cards, it's a s
 ***Fixed deposit - Account*** relationship (clabe): One fixed-term deposit is made by one account, and one account can do many fixed-term deposits. Many-to-one relationship.
 
 ***Fixed deposit - Transaction*** relationship (transaction_id): One fixed-term deposit is made by one transaction, and one transaction can only belong to one fixed-term deposit. One-to-one relationship.
+
 
 
 ***14. Fixed deposit interest.***  When the fixed-term deposit matures, the bank calculates the interest earned and returns it to you along with the principal (amount of the FD without interest ).
