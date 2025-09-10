@@ -1,7 +1,8 @@
 # Database-schema-of-a-mexican-bank
 
 
-<img width="1475" height="865" alt="image" src="https://github.com/user-attachments/assets/4ac9c496-75fc-4083-8fed-3e877432a10e" />
+<img width="2335" height="1489" alt="MexicanBankScheme (1)" src="https://github.com/user-attachments/assets/1b8355f9-6f5e-4df6-afc0-4ae6f5743b6d" />
+
 
 
 This is a database schema of a mexican bank, performed in postgresql, it stores basic transaction operations like: transfers, cash deposits, loans, withdrawals, interest payment of accounts (e.g. savings account), loan's payments, fixed-term deposits and  its fixed deposit interests paid along with the principal deposit.  Of course, also it contains the related information for one bank like: employees, clients, branchs, accounts, etc.
