@@ -1,6 +1,9 @@
 # Database-schema-of-a-mexican-bank
 
 
+<img width="1475" height="865" alt="image" src="https://github.com/user-attachments/assets/4ac9c496-75fc-4083-8fed-3e877432a10e" />
+
+
 This is a database schema of a mexican bank, performed in postgresql, it stores basic transaction operations like: transfers, cash deposits, loans, withdrawals, interest payment of accounts (e.g. savings account), loan's payments, fixed-term deposits and  its fixed deposit interests paid along with the principal deposit.  Of course, also it contains the related information for one bank like: employees, clients, branchs, accounts, etc.
 
 It's a schema of bank with digital transactions without physical cards, it's a semi-complete banking database schema with its foreign and primary keys well-established to ensuring consistency, integrity and coherence in the data. However it's my initial project for a system so complex like a bank, could lack something else. In the files are mock real-world data to prove.
